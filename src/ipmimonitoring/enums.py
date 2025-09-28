@@ -139,6 +139,7 @@ class IpmiMonitoringDriverType(Enum):
     SSIF = 0x01
     OPENIPMI = 0x02
     SUNBMC = 0x03
+    AUTO = -1
 
 class IpmiMonitoringProtocolVersion(Enum):
     """IPMI Monitoring Protocol Version"""
