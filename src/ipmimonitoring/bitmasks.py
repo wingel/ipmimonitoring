@@ -2,7 +2,9 @@
 Python version of enums from ipmi_monitoring_bitmasks.h
 """
 
-class IpmiMonitoringSensorBitmaskType:
+from enum import Enum
+
+class IpmiMonitoringSensorBitmaskType(Enum):
     """IPMI Monitoring Sensor Bitmask Type"""
     THRESHOLD = 0x00
     TRANSITION_STATE = 0x01
@@ -59,7 +61,7 @@ class IpmiMonitoringSensorBitmaskType:
     OEM = 0xFE
     UNKNOWN = 0xFF
 
-class IpmiMonitoringSensorBitmaskThreshold:
+class IpmiMonitoringSensorBitmaskThreshold(Enum):
     """IPMI Monitoring Sensor Bitmask Threshold"""
     AT_OR_BELOW_LOWER_NON_CRITICAL_THRESHOLD = 0x0001
     AT_OR_BELOW_LOWER_CRITICAL_THRESHOLD = 0x0002
@@ -68,33 +70,33 @@ class IpmiMonitoringSensorBitmaskThreshold:
     AT_OR_BELOW_UPPER_CRITICAL_THRESHOLD = 0x0010
     AT_OR_BELOW_UPPER_NON_RECOVERABLE_THRESHOLD = 0x0020
 
-class IpmiMonitoringSensorBitmaskTransition:
+class IpmiMonitoringSensorBitmaskTransition(Enum):
     """IPMI Monitoring Sensor Bitmask Transition"""
     TO_IDLE = 0x0001
     TO_ACTIVE = 0x0002
     TO_BUSY = 0x0004
 
-class IpmiMonitoringSensorBitmaskState:
+class IpmiMonitoringSensorBitmaskState(Enum):
     """IPMI Monitoring Sensor Bitmask State"""
     DEASSERTED = 0x0001
     ASSERTED = 0x0002
 
-class IpmiMonitoringSensorBitmaskPredictiveFailure:
+class IpmiMonitoringSensorBitmaskPredictiveFailure(Enum):
     """IPMI Monitoring Sensor Bitmask Predictive Failure"""
     DEASSERTED = 0x0001
     ASSERTED = 0x0002
 
-class IpmiMonitoringSensorBitmaskLimit:
+class IpmiMonitoringSensorBitmaskLimit(Enum):
     """IPMI Monitoring Sensor Bitmask Limit"""
     NOT_EXCEEDED = 0x0001
     EXCEEDED = 0x0002
 
-class IpmiMonitoringSensorBitmaskPerformance:
+class IpmiMonitoringSensorBitmaskPerformance(Enum):
     """IPMI Monitoring Sensor Bitmask Performance"""
     MET = 0x0001
     LAGS = 0x0002
 
-class IpmiMonitoringSensorBitmaskTransitionSeverity:
+class IpmiMonitoringSensorBitmaskTransitionSeverity(Enum):
     """IPMI Monitoring Sensor Bitmask Transition Severity"""
     TO_OK = 0x0001
     TO_NON_CRITICAL_FROM_OK = 0x0002
@@ -106,17 +108,17 @@ class IpmiMonitoringSensorBitmaskTransitionSeverity:
     MONITOR = 0x0080
     INFORMATIONAL = 0x0100
 
-class IpmiMonitoringSensorBitmaskDevicePresent:
+class IpmiMonitoringSensorBitmaskDevicePresent(Enum):
     """IPMI Monitoring Sensor Bitmask Device Present"""
     REMOVED_DEVICE_ABSENT = 0x0001
     INSERTED_DEVICE_PRESENT = 0x0002
 
-class IpmiMonitoringSensorBitmaskDeviceEnabled:
+class IpmiMonitoringSensorBitmaskDeviceEnabled(Enum):
     """IPMI Monitoring Sensor Bitmask Device Enabled"""
     DISABLED = 0x0001
     ENABLED = 0x0002
 
-class IpmiMonitoringSensorBitmaskTransitionAvailability:
+class IpmiMonitoringSensorBitmaskTransitionAvailability(Enum):
     """IPMI Monitoring Sensor Bitmask Transition Availability"""
     TO_RUNNING = 0x0001
     TO_IN_TEST = 0x0002
@@ -128,7 +130,7 @@ class IpmiMonitoringSensorBitmaskTransitionAvailability:
     TO_POWER_SAVE = 0x0080
     INSTALL_ERROR = 0x0100
 
-class IpmiMonitoringSensorBitmaskRedundancy:
+class IpmiMonitoringSensorBitmaskRedundancy(Enum):
     """IPMI Monitoring Sensor Bitmask Redundancy"""
     FULLY_REDUNDANT = 0x0001
     REDUNDANCY_LOST = 0x0002
@@ -139,14 +141,14 @@ class IpmiMonitoringSensorBitmaskRedundancy:
     REDUNDANCY_DEGRADED_FROM_FULLY_REDUNDANT = 0x0040
     REDUNDANCY_DEGRADED_FROM_NON_REDUNDANT = 0x0080
 
-class IpmiMonitoringSensorBitmaskAcpiPowerState:
+class IpmiMonitoringSensorBitmaskAcpiPowerState(Enum):
     """IPMI Monitoring Sensor Bitmask ACPI Power State"""
     D0_POWER_STATE = 0x0001
     D1_POWER_STATE = 0x0002
     D2_POWER_STATE = 0x0004
     D3_POWER_STATE = 0x0008
 
-class IpmiMonitoringSensorBitmaskPhysicalSecurity:
+class IpmiMonitoringSensorBitmaskPhysicalSecurity(Enum):
     """IPMI Monitoring Sensor Bitmask Physical Security"""
     GENERAL_CHASSIS_INTRUSION = 0x0001
     DRIVE_BAY_INTRUSION = 0x0002
@@ -156,7 +158,7 @@ class IpmiMonitoringSensorBitmaskPhysicalSecurity:
     UNAUTHORIZED_DOCK_UNDOCK = 0x0020
     FAN_AREA_INTRUSION = 0x0040
 
-class IpmiMonitoringSensorBitmaskPlatformSecurityViolationAttempt:
+class IpmiMonitoringSensorBitmaskPlatformSecurityViolationAttempt(Enum):
     """IPMI Monitoring Sensor Bitmask Platform Security Violation Attempt"""
     SECURE_MODE_VIOLATION_ATTEMPT = 0x0001
     PRE_BOOT_PASSWORD_VIOLATION_USER_PASSWORD = 0x0002
@@ -165,7 +167,7 @@ class IpmiMonitoringSensorBitmaskPlatformSecurityViolationAttempt:
     OTHER_PRE_BOOT_PASSWORD_VIOLATION = 0x0010
     OUT_OF_BAND_ACCESS_PASSWORD_VIOLATION = 0x0020
 
-class IpmiMonitoringSensorBitmaskProcessor:
+class IpmiMonitoringSensorBitmaskProcessor(Enum):
     """IPMI Monitoring Sensor Bitmask Processor"""
     IERR = 0x0001
     THERMAL_TRIP = 0x0002
@@ -181,7 +183,7 @@ class IpmiMonitoringSensorBitmaskProcessor:
     MACHINE_CHECK_EXCEPTION = 0x0800
     CORRECTABLE_MACHINE_CHECK_ERROR = 0x1000
 
-class IpmiMonitoringSensorBitmaskPowerSupply:
+class IpmiMonitoringSensorBitmaskPowerSupply(Enum):
     """IPMI Monitoring Sensor Bitmask Power Supply"""
     PRESENCE_DETECTED = 0x0001
     POWER_SUPPLY_FAILURE_DETECTED = 0x0002
@@ -192,7 +194,7 @@ class IpmiMonitoringSensorBitmaskPowerSupply:
     CONFIGURATION_ERROR = 0x0040
     POWER_SUPPLY_INACTIVE = 0x0080
 
-class IpmiMonitoringSensorBitmaskPowerUnit:
+class IpmiMonitoringSensorBitmaskPowerUnit(Enum):
     """IPMI Monitoring Sensor Bitmask Power Unit"""
     POWER_OFF_POWER_DOWN = 0x0001
     POWER_CYCLE = 0x0002
@@ -203,7 +205,7 @@ class IpmiMonitoringSensorBitmaskPowerUnit:
     POWER_UNIT_FAILURE_DETECTED = 0x0040
     PREDICTIVE_FAILURE = 0x0080
 
-class IpmiMonitoringSensorBitmaskMemory:
+class IpmiMonitoringSensorBitmaskMemory(Enum):
     """IPMI Monitoring Sensor Bitmask Memory"""
     CORRECTABLE_MEMORY_ERROR = 0x0001
     UNCORRECTABLE_MEMORY_ERROR = 0x0002
@@ -217,7 +219,7 @@ class IpmiMonitoringSensorBitmaskMemory:
     MEMORY_AUTOMATICALLY_THROTTLED = 0x0200
     CRITICAL_OVERTEMPERATURE = 0x0400
 
-class IpmiMonitoringSensorBitmaskDriveSlot:
+class IpmiMonitoringSensorBitmaskDriveSlot(Enum):
     """IPMI Monitoring Sensor Bitmask Drive Slot"""
     DRIVE_PRESENCE = 0x0001
     DRIVE_FAULT = 0x0002
@@ -229,13 +231,13 @@ class IpmiMonitoringSensorBitmaskDriveSlot:
     REBUILD_REMAP_IN_PROGRESS = 0x0080
     REBUILD_REMAP_ABORTED = 0x0100
 
-class IpmiMonitoringSensorBitmaskSystemFirmwareProgress:
+class IpmiMonitoringSensorBitmaskSystemFirmwareProgress(Enum):
     """IPMI Monitoring Sensor Bitmask System Firmware Progress"""
     SYSTEM_FIRMWARE_ERROR = 0x0001
     SYSTEM_FIRMWARE_HANG = 0x0002
     SYSTEM_FIRMWARE_PROGRESS = 0x0004
 
-class IpmiMonitoringSensorBitmaskEventLoggingDisabled:
+class IpmiMonitoringSensorBitmaskEventLoggingDisabled(Enum):
     """IPMI Monitoring Sensor Bitmask Event Logging Disabled"""
     CORRECTABLE_MEMORY_ERROR_LOGGING_DISABLED = 0x0001
     EVENT_TYPE_LOGGING_DISABLED = 0x0002
@@ -245,7 +247,7 @@ class IpmiMonitoringSensorBitmaskEventLoggingDisabled:
     SEL_ALMOST_FULL = 0x0020
     CORRECTABLE_MACHINE_CHECK_ERROR_LOGGING_DISABLED = 0x0040
 
-class IpmiMonitoringSensorBitmaskWatchdog1:
+class IpmiMonitoringSensorBitmaskWatchdog1(Enum):
     """IPMI Monitoring Sensor Bitmask Watchdog1"""
     BIOS_WATCHDOG_RESET = 0x0001
     OS_WATCHDOG_RESET = 0x0002
@@ -256,7 +258,7 @@ class IpmiMonitoringSensorBitmaskWatchdog1:
     OS_WATCHDOG_EXPIRED_STATUS_ONLY = 0x0040
     OS_WATCHDOG_PRE_TIMEOUT_INTERRUPT_NON_NMI = 0x0080
 
-class IpmiMonitoringSensorBitmaskSystemEvent:
+class IpmiMonitoringSensorBitmaskSystemEvent(Enum):
     """IPMI Monitoring Sensor Bitmask System Event"""
     SYSTEM_RECONFIGURED = 0x0001
     OEM_SYSTEM_BOOT_EVENT = 0x0002
@@ -265,7 +267,7 @@ class IpmiMonitoringSensorBitmaskSystemEvent:
     PEF_ACTION = 0x0010
     TIMESTAMP_CLOCK_SYNC = 0x0020
 
-class IpmiMonitoringSensorBitmaskCriticalInterrupt:
+class IpmiMonitoringSensorBitmaskCriticalInterrupt(Enum):
     """IPMI Monitoring Sensor Bitmask Critical Interrupt"""
     FRONT_PANEL_NMI_DIAGNOSTIC_INTERRUPT = 0x0001
     BUS_TIMEOUT = 0x0002
@@ -280,7 +282,7 @@ class IpmiMonitoringSensorBitmaskCriticalInterrupt:
     BUS_FATAL_ERROR = 0x0400
     BUS_DEGRADED = 0x0800
 
-class IpmiMonitoringSensorBitmaskButtonSwitch:
+class IpmiMonitoringSensorBitmaskButtonSwitch(Enum):
     """IPMI Monitoring Sensor Bitmask Button Switch"""
     POWER_BUTTON_PRESSED = 0x0001
     SLEEP_BUTTON_PRESSED = 0x0002
@@ -288,17 +290,17 @@ class IpmiMonitoringSensorBitmaskButtonSwitch:
     FRU_LATCH_OPEN = 0x0008
     FRU_SERVICE_REQUEST_BUTTON = 0x0010
 
-class IpmiMonitoringSensorBitmaskChipSet:
+class IpmiMonitoringSensorBitmaskChipSet(Enum):
     """IPMI Monitoring Sensor Bitmask Chip Set"""
     SOFT_POWER_CONTROL_FAILURE = 0x0001
     THERMAL_TRIP = 0x0002
 
-class IpmiMonitoringSensorBitmaskCableInterconnect:
+class IpmiMonitoringSensorBitmaskCableInterconnect(Enum):
     """IPMI Monitoring Sensor Bitmask Cable Interconnect"""
     IS_CONNECTED = 0x0001
     CONFIGURATION_ERROR = 0x0002
 
-class IpmiMonitoringSensorBitmaskSystemBootInitiated:
+class IpmiMonitoringSensorBitmaskSystemBootInitiated(Enum):
     """IPMI Monitoring Sensor Bitmask System Boot Initiated"""
     INITIATED_BY_POWER_UP = 0x0001
     INITIATED_BY_HARD_RESET = 0x0002
@@ -309,7 +311,7 @@ class IpmiMonitoringSensorBitmaskSystemBootInitiated:
     OS_RUN_TIME_SOFTWARE_INITIATED_WARM_RESET = 0x0040
     SYSTEM_RESTART = 0x0080
 
-class IpmiMonitoringSensorBitmaskBootError:
+class IpmiMonitoringSensorBitmaskBootError(Enum):
     """IPMI Monitoring Sensor Bitmask Boot Error"""
     NO_BOOTABLE_MEDIA = 0x0001
     NON_BOOTABLE_DISKETTE_LEFT_IN_DRIVE = 0x0002
@@ -317,7 +319,7 @@ class IpmiMonitoringSensorBitmaskBootError:
     INVALID_BOOT_SECTOR = 0x0008
     TIMEOUT_WAITING_FOR_USER_SELECTION_OF_BOOT_SOURCE = 0x0010
 
-class IpmiMonitoringSensorBitmaskOsBoot:
+class IpmiMonitoringSensorBitmaskOsBoot(Enum):
     """IPMI Monitoring Sensor Bitmask OS Boot"""
     A_BOOT_COMPLETED = 0x0001
     C_BOOT_COMPLETED = 0x0002
@@ -331,7 +333,7 @@ class IpmiMonitoringSensorBitmaskOsBoot:
     BASE_OS_HYPERVISOR_INSTALLATION_ABORTED = 0x0200
     BASE_OS_HYPERVISOR_INSTALLATION_FAILED = 0x0400
 
-class IpmiMonitoringSensorBitmaskOsCriticalStop:
+class IpmiMonitoringSensorBitmaskOsCriticalStop(Enum):
     """IPMI Monitoring Sensor Bitmask OS Critical Stop"""
     CRITICAL_STOP_DURING_OS_LOAD = 0x0001
     RUN_TIME_CRITICAL_STOP = 0x0002
@@ -340,7 +342,7 @@ class IpmiMonitoringSensorBitmaskOsCriticalStop:
     SOFT_SHUTDOWN_INITIATED_BY_PEF = 0x0010
     AGENT_NOT_RESPONDING = 0x0020
 
-class IpmiMonitoringSensorBitmaskSlotConnector:
+class IpmiMonitoringSensorBitmaskSlotConnector(Enum):
     """IPMI Monitoring Sensor Bitmask Slot Connector"""
     FAULT_STATUS_ASSERTED = 0x0001
     IDENTIFY_STATUS_ASSERTED = 0x0002
@@ -353,7 +355,7 @@ class IpmiMonitoringSensorBitmaskSlotConnector:
     SLOT_IS_DISABLED = 0x0100
     SLOT_HOLDS_SPARE_DEVICE = 0x0200
 
-class IpmiMonitoringSensorBitmaskSystemAcpiPowerState:
+class IpmiMonitoringSensorBitmaskSystemAcpiPowerState(Enum):
     """IPMI Monitoring Sensor Bitmask System ACPI Power State"""
     S0_G0 = 0x0001
     S1 = 0x0002
@@ -371,7 +373,7 @@ class IpmiMonitoringSensorBitmaskSystemAcpiPowerState:
     UNSPECIFIED = 0x2000
     UNKNOWN = 0x4000
 
-class IpmiMonitoringSensorBitmaskWatchdog2:
+class IpmiMonitoringSensorBitmaskWatchdog2(Enum):
     """IPMI Monitoring Sensor Bitmask Watchdog2"""
     TIMER_EXPIRED = 0x0001
     HARD_RESET = 0x0002
@@ -383,25 +385,25 @@ class IpmiMonitoringSensorBitmaskWatchdog2:
     RESERVED4 = 0x0080
     TIMER_INTERRUPT = 0x0100
 
-class IpmiMonitoringSensorBitmaskPlatformAlert:
+class IpmiMonitoringSensorBitmaskPlatformAlert(Enum):
     """IPMI Monitoring Sensor Bitmask Platform Alert"""
     PLATFORM_GENERATED_PAGE = 0x0001
     PLATFORM_GENERATED_LAN_ALERT = 0x0002
     PLATFORM_EVENT_TRAP_GENERATED = 0x0004
     PLATFORM_GENERATED_SNMP_TRAP = 0x0008
 
-class IpmiMonitoringSensorBitmaskEntityPresence:
+class IpmiMonitoringSensorBitmaskEntityPresence(Enum):
     """IPMI Monitoring Sensor Bitmask Entity Presence"""
     ENTITY_PRESENT = 0x0001
     ENTITY_ABSENT = 0x0002
     ENTITY_DISABLED = 0x0004
 
-class IpmiMonitoringSensorBitmaskLan:
+class IpmiMonitoringSensorBitmaskLan(Enum):
     """IPMI Monitoring Sensor Bitmask LAN"""
     HEARTBEAT_LOST = 0x0001
     HEARTBEAT = 0x0002
 
-class IpmiMonitoringSensorBitmaskManagementSubsystemHealth:
+class IpmiMonitoringSensorBitmaskManagementSubsystemHealth(Enum):
     """IPMI Monitoring Sensor Bitmask Management Subsystem Health"""
     SENSOR_ACCESS_DEGRADED_OR_UNAVAILABLE = 0x0001
     CONTROLLER_ACCESS_DEGRADED_OR_UNAVAILABLE = 0x0002
@@ -410,20 +412,20 @@ class IpmiMonitoringSensorBitmaskManagementSubsystemHealth:
     SENSOR_FAILURE = 0x0010
     FRU_FAILURE = 0x0020
 
-class IpmiMonitoringSensorBitmaskBattery:
+class IpmiMonitoringSensorBitmaskBattery(Enum):
     """IPMI Monitoring Sensor Bitmask Battery"""
     BATTERY_LOW = 0x0001
     BATTERY_FAILED = 0x0002
     BATTERY_PRESENCE_DETECTED = 0x0004
 
-class IpmiMonitoringSensorBitmaskSessionAudit:
+class IpmiMonitoringSensorBitmaskSessionAudit(Enum):
     """IPMI Monitoring Sensor Bitmask Session Audit"""
     SESSION_ACTIVATED = 0x0001
     SESSION_DEACTIVATED = 0x0002
     INVALID_USERNAME_OR_PASSWORD = 0x0004
     INVALID_PASSWORD_DISABLE = 0x0008
 
-class IpmiMonitoringSensorBitmaskVersionChange:
+class IpmiMonitoringSensorBitmaskVersionChange(Enum):
     """IPMI Monitoring Sensor Bitmask Version Change"""
     HARDWARE_CHANGE_DETECTED_WITH_ASSOCIATED_ENTITY = 0x0001
     FIRMWARE_OR_SOFTWARE_CHANGE_DETECTED_WITH_ASSOCIATED_ENTITY = 0x0002
@@ -434,7 +436,7 @@ class IpmiMonitoringSensorBitmaskVersionChange:
     HARDWARE_CHANGE_DETECTED_WITH_ASSOCIATED_ENTITY_WAS_SUCCESSFUL = 0x0040
     SOFTWARE_OR_FW_CHANGE_DETECTED_WITH_ASSOCIATED_ENTITY_WAS_SUCCESSFUL = 0x0080
 
-class IpmiMonitoringSensorBitmaskFruState:
+class IpmiMonitoringSensorBitmaskFruState(Enum):
     """IPMI Monitoring Sensor Bitmask FRU State"""
     FRU_NOT_INSTALLED = 0x0001
     FRU_INACTIVE = 0x0002

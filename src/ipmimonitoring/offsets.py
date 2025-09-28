@@ -2,7 +2,9 @@
 Python version of enums from ipmi_monitoring_offsets.h
 """
 
-class IpmiMonitoringEventOffsetType:
+from enum import Enum
+
+class IpmiMonitoringEventOffsetType(Enum):
     """IPMI Monitoring Event Offset Type"""
     THRESHOLD = 0x00
     TRANSITION_STATE = 0x01
@@ -59,7 +61,7 @@ class IpmiMonitoringEventOffsetType:
     OEM = 0xFE
     UNKNOWN = 0xFF
 
-class IpmiMonitoringEventOffsetThreshold:
+class IpmiMonitoringEventOffsetThreshold(Enum):
     """IPMI Monitoring Event Offset Threshold"""
     LOWER_NON_CRITICAL_GOING_LOW = 0x00
     LOWER_NON_CRITICAL_GOING_HIGH = 0x01
@@ -74,33 +76,33 @@ class IpmiMonitoringEventOffsetThreshold:
     UPPER_NON_RECOVERABLE_GOING_LOW = 0x0A
     UPPER_NON_RECOVERABLE_GOING_HIGH = 0x0B
 
-class IpmiMonitoringEventOffsetTransition:
+class IpmiMonitoringEventOffsetTransition(Enum):
     """IPMI Monitoring Event Offset Transition"""
     TO_IDLE = 0x00
     TO_ACTIVE = 0x01
     TO_BUSY = 0x02
 
-class IpmiMonitoringEventOffsetState:
+class IpmiMonitoringEventOffsetState(Enum):
     """IPMI Monitoring Event Offset State"""
     DEASSERTED = 0x00
     ASSERTED = 0x01
 
-class IpmiMonitoringEventOffsetPredictiveFailure:
+class IpmiMonitoringEventOffsetPredictiveFailure(Enum):
     """IPMI Monitoring Event Offset Predictive Failure"""
     DEASSERTED = 0x00
     ASSERTED = 0x01
 
-class IpmiMonitoringEventOffsetLimit:
+class IpmiMonitoringEventOffsetLimit(Enum):
     """IPMI Monitoring Event Offset Limit"""
     NOT_EXCEEDED = 0x00
     EXCEEDED = 0x01
 
-class IpmiMonitoringEventOffsetPerformance:
+class IpmiMonitoringEventOffsetPerformance(Enum):
     """IPMI Monitoring Event Offset Performance"""
     MET = 0x00
     LAGS = 0x01
 
-class IpmiMonitoringEventOffsetTransitionSeverity:
+class IpmiMonitoringEventOffsetTransitionSeverity(Enum):
     """IPMI Monitoring Event Offset Transition Severity"""
     TO_OK = 0x00
     TO_NON_CRITICAL_FROM_OK = 0x01
@@ -112,17 +114,17 @@ class IpmiMonitoringEventOffsetTransitionSeverity:
     MONITOR = 0x07
     INFORMATIONAL = 0x08
 
-class IpmiMonitoringEventOffsetDevicePresent:
+class IpmiMonitoringEventOffsetDevicePresent(Enum):
     """IPMI Monitoring Event Offset Device Present"""
     REMOVED_DEVICE_ABSENT = 0x00
     INSERTED_DEVICE_PRESENT = 0x01
 
-class IpmiMonitoringEventOffsetDeviceEnabled:
+class IpmiMonitoringEventOffsetDeviceEnabled(Enum):
     """IPMI Monitoring Event Offset Device Enabled"""
     DISABLED = 0x00
     ENABLED = 0x01
 
-class IpmiMonitoringEventOffsetTransitionAvailability:
+class IpmiMonitoringEventOffsetTransitionAvailability(Enum):
     """IPMI Monitoring Event Offset Transition Availability"""
     TO_RUNNING = 0x00
     TO_IN_TEST = 0x01
@@ -134,7 +136,7 @@ class IpmiMonitoringEventOffsetTransitionAvailability:
     TO_POWER_SAVE = 0x07
     INSTALL_ERROR = 0x08
 
-class IpmiMonitoringEventOffsetRedundancy:
+class IpmiMonitoringEventOffsetRedundancy(Enum):
     """IPMI Monitoring Event Offset Redundancy"""
     FULLY_REDUNDANT = 0x00
     REDUNDANCY_LOST = 0x01
@@ -145,14 +147,14 @@ class IpmiMonitoringEventOffsetRedundancy:
     REDUNDANCY_DEGRADED_FROM_FULLY_REDUNDANT = 0x06
     REDUNDANCY_DEGRADED_FROM_NON_REDUNDANT = 0x07
 
-class IpmiMonitoringEventOffsetAcpiPowerState:
+class IpmiMonitoringEventOffsetAcpiPowerState(Enum):
     """IPMI Monitoring Event Offset ACPI Power State"""
     D0_POWER_STATE = 0x00
     D1_POWER_STATE = 0x01
     D2_POWER_STATE = 0x02
     D3_POWER_STATE = 0x03
 
-class IpmiMonitoringEventOffsetPhysicalSecurity:
+class IpmiMonitoringEventOffsetPhysicalSecurity(Enum):
     """IPMI Monitoring Event Offset Physical Security"""
     GENERAL_CHASSIS_INTRUSION = 0x00
     DRIVE_BAY_INTRUSION = 0x01
@@ -162,7 +164,7 @@ class IpmiMonitoringEventOffsetPhysicalSecurity:
     UNAUTHORIZED_DOCK_UNDOCK = 0x05
     FAN_AREA_INTRUSION = 0x06
 
-class IpmiMonitoringEventOffsetPlatformSecurityViolationAttempt:
+class IpmiMonitoringEventOffsetPlatformSecurityViolationAttempt(Enum):
     """IPMI Monitoring Event Offset Platform Security Violation Attempt"""
     SECURE_MODE_VIOLATION_ATTEMPT = 0x00
     PRE_BOOT_PASSWORD_VIOLATION_USER_PASSWORD = 0x01
@@ -171,7 +173,7 @@ class IpmiMonitoringEventOffsetPlatformSecurityViolationAttempt:
     OTHER_PRE_BOOT_PASSWORD_VIOLATION = 0x04
     OUT_OF_BAND_ACCESS_PASSWORD_VIOLATION = 0x05
 
-class IpmiMonitoringEventOffsetProcessor:
+class IpmiMonitoringEventOffsetProcessor(Enum):
     """IPMI Monitoring Event Offset Processor"""
     IERR = 0x00
     THERMAL_TRIP = 0x01
@@ -187,7 +189,7 @@ class IpmiMonitoringEventOffsetProcessor:
     MACHINE_CHECK_EXCEPTION = 0x0B
     CORRECTABLE_MACHINE_CHECK_ERROR = 0x0C
 
-class IpmiMonitoringEventOffsetPowerSupply:
+class IpmiMonitoringEventOffsetPowerSupply(Enum):
     """IPMI Monitoring Event Offset Power Supply"""
     PRESENCE_DETECTED = 0x00
     POWER_SUPPLY_FAILURE_DETECTED = 0x01
@@ -198,7 +200,7 @@ class IpmiMonitoringEventOffsetPowerSupply:
     CONFIGURATION_ERROR = 0x06
     POWER_SUPPLY_INACTIVE = 0x07
 
-class IpmiMonitoringEventOffsetPowerUnit:
+class IpmiMonitoringEventOffsetPowerUnit(Enum):
     """IPMI Monitoring Event Offset Power Unit"""
     POWER_OFF_POWER_DOWN = 0x00
     POWER_CYCLE = 0x01
@@ -209,7 +211,7 @@ class IpmiMonitoringEventOffsetPowerUnit:
     POWER_UNIT_FAILURE_DETECTED = 0x06
     PREDICTIVE_FAILURE = 0x07
 
-class IpmiMonitoringEventOffsetMemory:
+class IpmiMonitoringEventOffsetMemory(Enum):
     """IPMI Monitoring Event Offset Memory"""
     CORRECTABLE_MEMORY_ERROR = 0x00
     UNCORRECTABLE_MEMORY_ERROR = 0x01
@@ -223,7 +225,7 @@ class IpmiMonitoringEventOffsetMemory:
     MEMORY_AUTOMATICALLY_THROTTLED = 0x09
     CRITICAL_OVERTEMPERATURE = 0x0A
 
-class IpmiMonitoringEventOffsetDriveSlot:
+class IpmiMonitoringEventOffsetDriveSlot(Enum):
     """IPMI Monitoring Event Offset Drive Slot"""
     DRIVE_PRESENCE = 0x00
     DRIVE_FAULT = 0x01
@@ -235,13 +237,13 @@ class IpmiMonitoringEventOffsetDriveSlot:
     REBUILD_REMAP_IN_PROGRESS = 0x07
     REBUILD_REMAP_ABORTED = 0x08
 
-class IpmiMonitoringEventOffsetSystemFirmwareProgress:
+class IpmiMonitoringEventOffsetSystemFirmwareProgress(Enum):
     """IPMI Monitoring Event Offset System Firmware Progress"""
     SYSTEM_FIRMWARE_ERROR = 0x00
     SYSTEM_FIRMWARE_HANG = 0x01
     SYSTEM_FIRMWARE_PROGRESS = 0x02
 
-class IpmiMonitoringEventOffsetEventLoggingDisabled:
+class IpmiMonitoringEventOffsetEventLoggingDisabled(Enum):
     """IPMI Monitoring Event Offset Event Logging Disabled"""
     CORRECTABLE_MEMORY_ERROR_LOGGING_DISABLED = 0x00
     EVENT_TYPE_LOGGING_DISABLED = 0x01
@@ -251,7 +253,7 @@ class IpmiMonitoringEventOffsetEventLoggingDisabled:
     SEL_ALMOST_FULL = 0x05
     CORRECTABLE_MACHINE_CHECK_ERROR_LOGGING_DISABLED = 0x06
 
-class IpmiMonitoringEventOffsetWatchdog1:
+class IpmiMonitoringEventOffsetWatchdog1(Enum):
     """IPMI Monitoring Event Offset Watchdog1"""
     BIOS_WATCHDOG_RESET = 0x00
     OS_WATCHDOG_RESET = 0x01
@@ -262,7 +264,7 @@ class IpmiMonitoringEventOffsetWatchdog1:
     OS_WATCHDOG_EXPIRED_STATUS_ONLY = 0x06
     OS_WATCHDOG_PRE_TIMEOUT_INTERRUPT_NON_NMI = 0x07
 
-class IpmiMonitoringEventOffsetSystemEvent:
+class IpmiMonitoringEventOffsetSystemEvent(Enum):
     """IPMI Monitoring Event Offset System Event"""
     SYSTEM_RECONFIGURED = 0x00
     OEM_SYSTEM_BOOT_EVENT = 0x01
@@ -271,7 +273,7 @@ class IpmiMonitoringEventOffsetSystemEvent:
     PEF_ACTION = 0x04
     TIMESTAMP_CLOCK_SYNC = 0x05
 
-class IpmiMonitoringEventOffsetCriticalInterrupt:
+class IpmiMonitoringEventOffsetCriticalInterrupt(Enum):
     """IPMI Monitoring Event Offset Critical Interrupt"""
     FRONT_PANEL_NMI_DIAGNOSTIC_INTERRUPT = 0x00
     BUS_TIMEOUT = 0x01
@@ -286,7 +288,7 @@ class IpmiMonitoringEventOffsetCriticalInterrupt:
     BUS_FATAL_ERROR = 0x0A
     BUS_DEGRADED = 0x0B
 
-class IpmiMonitoringEventOffsetButtonSwitch:
+class IpmiMonitoringEventOffsetButtonSwitch(Enum):
     """IPMI Monitoring Event Offset Button Switch"""
     POWER_BUTTON_PRESSED = 0x00
     SLEEP_BUTTON_PRESSED = 0x01
@@ -294,17 +296,17 @@ class IpmiMonitoringEventOffsetButtonSwitch:
     FRU_LATCH_OPEN = 0x03
     FRU_SERVICE_REQUEST_BUTTON = 0x04
 
-class IpmiMonitoringEventOffsetChipSet:
+class IpmiMonitoringEventOffsetChipSet(Enum):
     """IPMI Monitoring Event Offset Chip Set"""
     SOFT_POWER_CONTROL_FAILURE = 0x00
     THERMAL_TRIP = 0x01
 
-class IpmiMonitoringEventOffsetCableInterconnect:
+class IpmiMonitoringEventOffsetCableInterconnect(Enum):
     """IPMI Monitoring Event Offset Cable Interconnect"""
     IS_CONNECTED = 0x00
     CONFIGURATION_ERROR = 0x01
 
-class IpmiMonitoringEventOffsetSystemBootInitiated:
+class IpmiMonitoringEventOffsetSystemBootInitiated(Enum):
     """IPMI Monitoring Event Offset System Boot Initiated"""
     INITIATED_BY_POWER_UP = 0x00
     INITIATED_BY_HARD_RESET = 0x01
@@ -315,7 +317,7 @@ class IpmiMonitoringEventOffsetSystemBootInitiated:
     OS_RUN_TIME_SOFTWARE_INITIATED_WARM_RESET = 0x06
     SYSTEM_RESTART = 0x07
 
-class IpmiMonitoringEventOffsetBootError:
+class IpmiMonitoringEventOffsetBootError(Enum):
     """IPMI Monitoring Event Offset Boot Error"""
     NO_BOOTABLE_MEDIA = 0x00
     NON_BOOTABLE_DISKETTE_LEFT_IN_DRIVE = 0x01
@@ -323,7 +325,7 @@ class IpmiMonitoringEventOffsetBootError:
     INVALID_BOOT_SECTOR = 0x03
     TIMEOUT_WAITING_FOR_USER_SELECTION_OF_BOOT_SOURCE = 0x04
 
-class IpmiMonitoringEventOffsetOsBoot:
+class IpmiMonitoringEventOffsetOsBoot(Enum):
     """IPMI Monitoring Event Offset OS Boot"""
     A_BOOT_COMPLETED = 0x00
     C_BOOT_COMPLETED = 0x01
@@ -337,7 +339,7 @@ class IpmiMonitoringEventOffsetOsBoot:
     BASE_OS_HYPERVISOR_INSTALLATION_ABORTED = 0x09
     BASE_OS_HYPERVISOR_INSTALLATION_FAILED = 0x0A
 
-class IpmiMonitoringEventOffsetOsCriticalStop:
+class IpmiMonitoringEventOffsetOsCriticalStop(Enum):
     """IPMI Monitoring Event Offset OS Critical Stop"""
     CRITICAL_STOP_DURING_OS_LOAD = 0x00
     RUN_TIME_CRITICAL_STOP = 0x01
@@ -346,7 +348,7 @@ class IpmiMonitoringEventOffsetOsCriticalStop:
     SOFT_SHUTDOWN_INITIATED_BY_PEF = 0x04
     AGENT_NOT_RESPONDING = 0x05
 
-class IpmiMonitoringEventOffsetSlotConnector:
+class IpmiMonitoringEventOffsetSlotConnector(Enum):
     """IPMI Monitoring Event Offset Slot Connector"""
     FAULT_STATUS_ASSERTED = 0x00
     IDENTIFY_STATUS_ASSERTED = 0x01
@@ -359,7 +361,7 @@ class IpmiMonitoringEventOffsetSlotConnector:
     SLOT_IS_DISABLED = 0x08
     SLOT_HOLDS_SPARE_DEVICE = 0x09
 
-class IpmiMonitoringEventOffsetSystemAcpiPowerState:
+class IpmiMonitoringEventOffsetSystemAcpiPowerState(Enum):
     """IPMI Monitoring Event Offset System ACPI Power State"""
     S0_G0 = 0x00
     S1 = 0x01
@@ -377,7 +379,7 @@ class IpmiMonitoringEventOffsetSystemAcpiPowerState:
     UNSPECIFIED = 0x0D
     UNKNOWN = 0x0E
 
-class IpmiMonitoringEventOffsetWatchdog2:
+class IpmiMonitoringEventOffsetWatchdog2(Enum):
     """IPMI Monitoring Event Offset Watchdog2"""
     TIMER_EXPIRED = 0x00
     HARD_RESET = 0x01
@@ -389,25 +391,25 @@ class IpmiMonitoringEventOffsetWatchdog2:
     RESERVED4 = 0x07
     TIMER_INTERRUPT = 0x08
 
-class IpmiMonitoringEventOffsetPlatformAlert:
+class IpmiMonitoringEventOffsetPlatformAlert(Enum):
     """IPMI Monitoring Event Offset Platform Alert"""
     PLATFORM_GENERATED_PAGE = 0x00
     PLATFORM_GENERATED_LAN_ALERT = 0x01
     PLATFORM_EVENT_TRAP_GENERATED = 0x02
     PLATFORM_GENERATED_SNMP_TRAP = 0x03
 
-class IpmiMonitoringEventOffsetEntityPresence:
+class IpmiMonitoringEventOffsetEntityPresence(Enum):
     """IPMI Monitoring Event Offset Entity Presence"""
     ENTITY_PRESENT = 0x00
     ENTITY_ABSENT = 0x01
     ENTITY_DISABLED = 0x02
 
-class IpmiMonitoringEventOffsetLan:
+class IpmiMonitoringEventOffsetLan(Enum):
     """IPMI Monitoring Event Offset LAN"""
     HEARTBEAT_LOST = 0x00
     HEARTBEAT = 0x01
 
-class IpmiMonitoringEventOffsetManagementSubsystemHealth:
+class IpmiMonitoringEventOffsetManagementSubsystemHealth(Enum):
     """IPMI Monitoring Event Offset Management Subsystem Health"""
     SENSOR_ACCESS_DEGRADED_OR_UNAVAILABLE = 0x00
     CONTROLLER_ACCESS_DEGRADED_OR_UNAVAILABLE = 0x01
@@ -416,20 +418,20 @@ class IpmiMonitoringEventOffsetManagementSubsystemHealth:
     SENSOR_FAILURE = 0x04
     FRU_FAILURE = 0x05
 
-class IpmiMonitoringEventOffsetBattery:
+class IpmiMonitoringEventOffsetBattery(Enum):
     """IPMI Monitoring Event Offset Battery"""
     BATTERY_LOW = 0x00
     BATTERY_FAILED = 0x01
     BATTERY_PRESENCE_DETECTED = 0x02
 
-class IpmiMonitoringEventOffsetSessionAudit:
+class IpmiMonitoringEventOffsetSessionAudit(Enum):
     """IPMI Monitoring Event Offset Session Audit"""
     SESSION_ACTIVATED = 0x00
     SESSION_DEACTIVATED = 0x01
     INVALID_USERNAME_OR_PASSWORD = 0x02
     INVALID_PASSWORD_DISABLE = 0x03
 
-class IpmiMonitoringEventOffsetVersionChange:
+class IpmiMonitoringEventOffsetVersionChange(Enum):
     """IPMI Monitoring Event Offset Version Change"""
     HARDWARE_CHANGE_DETECTED_WITH_ASSOCIATED_ENTITY = 0x00
     FIRMWARE_OR_SOFTWARE_CHANGE_DETECTED_WITH_ASSOCIATED_ENTITY = 0x01
@@ -440,7 +442,7 @@ class IpmiMonitoringEventOffsetVersionChange:
     HARDWARE_CHANGE_DETECTED_WITH_ASSOCIATED_ENTITY_WAS_SUCCESSFUL = 0x06
     SOFTWARE_OR_FW_CHANGE_DETECTED_WITH_ASSOCIATED_ENTITY_WAS_SUCCESSFUL = 0x07
 
-class IpmiMonitoringEventOffsetFruState:
+class IpmiMonitoringEventOffsetFruState(Enum):
     """IPMI Monitoring Event Offset FRU State"""
     FRU_NOT_INSTALLED = 0x00
     FRU_INACTIVE = 0x01

@@ -2,7 +2,9 @@
 Python version of enums from ipmi_monitoring.h
 """
 
-class IpmiMonitoringErrorCodes:
+from enum import Enum
+
+class IpmiMonitoringErrorCodes(Enum):
     """IPMI Monitoring Error Codes"""
     SUCCESS = 0
     CTX_NULL = 1
@@ -42,21 +44,21 @@ class IpmiMonitoringErrorCodes:
     INTERNAL_ERROR = 35
     ERRNUMRANGE = 36
 
-class IpmiMonitoringState:
+class IpmiMonitoringState(Enum):
     """IPMI Monitoring State"""
     NOMINAL = 0x00
     WARNING = 0x01
     CRITICAL = 0x02
     UNKNOWN = 0x03
 
-class IpmiMonitoringSelRecordTypeClass:
+class IpmiMonitoringSelRecordTypeClass(Enum):
     """IPMI Monitoring SEL Record Type Class"""
     SYSTEM_EVENT_RECORD = 0x00
     TIMESTAMPED_OEM_RECORD = 0x01
     NON_TIMESTAMPED_OEM_RECORD = 0x02
     UNKNOWN = 0x03
 
-class IpmiMonitoringSensorType:
+class IpmiMonitoringSensorType(Enum):
     """IPMI Monitoring Sensor Type"""
     RESERVED = 0x00
     TEMPERATURE = 0x01
@@ -107,12 +109,12 @@ class IpmiMonitoringSensorType:
     OEM_MAX = 0xFF
     UNKNOWN = 0xFFFF
 
-class IpmiMonitoringSelEventDirection:
+class IpmiMonitoringSelEventDirection(Enum):
     """IPMI Monitoring SEL Event Direction"""
     ASSERTION = 0x00
     DEASSERTION = 0x01
 
-class IpmiMonitoringSensorUnits:
+class IpmiMonitoringSensorUnits(Enum):
     """IPMI Monitoring Sensor Units"""
     NONE = 0x00
     CELSIUS = 0x01
@@ -124,46 +126,46 @@ class IpmiMonitoringSensorUnits:
     PERCENT = 0x07
     UNKNOWN = 0xFF
 
-class IpmiMonitoringSensorReadingType:
+class IpmiMonitoringSensorReadingType(Enum):
     """IPMI Monitoring Sensor Reading Type"""
     UNSIGNED_INTEGER8_BOOL = 0x00
     UNSIGNED_INTEGER32 = 0x01
     DOUBLE = 0x02
     UNKNOWN = 0xFF
 
-class IpmiMonitoringDriverType:
+class IpmiMonitoringDriverType(Enum):
     """IPMI Monitoring Driver Type"""
     KCS = 0x00
     SSIF = 0x01
     OPENIPMI = 0x02
     SUNBMC = 0x03
 
-class IpmiMonitoringProtocolVersion:
+class IpmiMonitoringProtocolVersion(Enum):
     """IPMI Monitoring Protocol Version"""
     VERSION_1_5 = 0x00
     VERSION_2_0 = 0x01
 
-class IpmiMonitoringPrivilege:
+class IpmiMonitoringPrivilege(Enum):
     """IPMI Monitoring Privilege Level"""
     USER = 0x00
     OPERATOR = 0x01
     ADMIN = 0x02
 
-class IpmiMonitoringAuthenticationType:
+class IpmiMonitoringAuthenticationType(Enum):
     """IPMI Monitoring Authentication Type"""
     NONE = 0x00
     STRAIGHT_PASSWORD_KEY = 0x01
     MD2 = 0x02
     MD5 = 0x03
 
-class IpmiMonitoringFlags:
+class IpmiMonitoringFlags(Enum):
     """IPMI Monitoring Flags"""
     NONE = 0x00
     DEBUG = 0x01
     DEBUG_IPMI_PACKETS = 0x02
     LOCK_MEMORY = 0x04
 
-class IpmiMonitoringWorkaroundFlags:
+class IpmiMonitoringWorkaroundFlags(Enum):
     """IPMI Monitoring Workaround Flags"""
     # For use with IPMI_MONITORING_PROTOCOL_VERSION_1_5
     PROTOCOL_VERSION_1_5_AUTHENTICATION_CAPABILITIES = 0x00000001
@@ -187,7 +189,7 @@ class IpmiMonitoringWorkaroundFlags:
     INBAND_ASSUME_IO_BASE_ADDRESS = 0x00000001
     INBAND_SPIN_POLL = 0x00000002
 
-class IpmiMonitoringSelFlags:
+class IpmiMonitoringSelFlags(Enum):
     """IPMI Monitoring SEL Flags"""
     REREAD_SDR_CACHE = 0x00000001
     INTERPRET_OEM_DATA = 0x00000002
@@ -195,7 +197,7 @@ class IpmiMonitoringSelFlags:
     ENTITY_SENSOR_NAMES = 0x00000008
     ASSUME_MAX_SDR_RECORD_COUNT = 0x00000010
 
-class IpmiMonitoringSensorReadingFlags:
+class IpmiMonitoringSensorReadingFlags(Enum):
     """IPMI Monitoring Sensor Reading Flags"""
     REREAD_SDR_CACHE = 0x00000001
     IGNORE_NON_INTERPRETABLE_SENSORS = 0x00000002
