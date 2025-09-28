@@ -1,6 +1,6 @@
 [project]
 name = "ipmimonitoring"
-version = "0.1.1"
+version = "0.1.2"
 description = "A python wrapper for libipmimonitoring from freeipmi"
 readme = "README.md"
 authors = [

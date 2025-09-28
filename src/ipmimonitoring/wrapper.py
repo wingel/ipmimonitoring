@@ -245,7 +245,7 @@ class IpmiMonitoringContext:
             sdr_cache_filenames (str, optional): Filename format for SDR cache files
             sensor_config_file (str, optional): Path to sensor configuration file
         """
-        self.lib = ffi.dlopen("libipmimonitoring.so")
+        self.lib = ffi.dlopen("libipmimonitoring.so.6")
         errnum = ffi.new("int *")
         result = self.lib.ipmi_monitoring_init(init_flags, errnum)
         if result != 0:
