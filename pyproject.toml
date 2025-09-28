@@ -1,6 +1,6 @@
 [project]
 name = "ipmimonitoring"
-version = "0.1.0"
+version = "0.1.1"
 description = "A python wrapper for libipmimonitoring from freeipmi"
 readme = "README.md"
 authors = [
@@ -11,6 +11,12 @@ dependencies = [
     "cffi>=1.15.1",
     "prettytable>=3.10.0",
 ]
+license = "MIT"
+license-files = ["LICENSE"]
+
+[project.urls]
+homepage = "https://github.com/wingel/ipmimonitoring"
+repository = "https://github.com/wingel/ipmimonitoring.git"
 
 [build-system]
 requires = ["uv_build>=0.8.22,<0.9.0"]
