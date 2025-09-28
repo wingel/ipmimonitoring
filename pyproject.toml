@@ -1,13 +1,16 @@
 [project]
 name = "ipmimonitoring"
 version = "0.1.0"
-description = "Add your description here"
+description = "A python wrapper for libipmimonitoring from freeipmi"
 readme = "README.md"
 authors = [
     { name = "Christer Weinigel", email = "christer@weinigel.se" }
 ]
-requires-python = ">=3.12"
-dependencies = []
+requires-python = ">=3.8"
+dependencies = [
+    "cffi>=1.15.1",
+    "prettytable>=3.10.0",
+]
 
 [build-system]
 requires = ["uv_build>=0.8.22,<0.9.0"]
